@@ -93,10 +93,6 @@ export default function DemoPage() {
       {/* 1. POLISHED DEMO HEADER */}
       <div className="border-b border-zinc-800/80 pb-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-amber-500 uppercase tracking-widest mb-2 font-bold">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>AgentDate Showcase</span>
-          </div>
           <h1 className="text-3xl sm:text-5xl font-display font-semibold text-zinc-100">
             25-Person Agent Dating Demo
           </h1>
