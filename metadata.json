@@ -1,0 +1,8 @@
+{
+  "name": "AgentDate - Agentic Dating Platform",
+  "description": "An agentic dating platform where real people are represented by AI agents to analyze compatibility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

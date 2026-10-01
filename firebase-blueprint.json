@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "Person": {
+      "title": "Person",
+      "description": "Represents an analyzed profile in the matching chamber",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "headline": { "type": "string" },
+        "bio": { "type": "string" },
+        "about": { "type": "string" },
+        "location": { "type": "string" },
+        "currentPosition": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "gender": { "type": "string" },
+        "linkedinUrl": { "type": "string" },
+        "instagramUrl": { "type": "string" }
+      },
+      "required": ["id"]
+    },
+    "DateSession": {
+      "title": "DateSession",
+      "description": "Represents a completed or in-progress agent dating conversation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "personAId": { "type": "string" },
+        "personBId": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "personAId", "personBId", "status"]
+    },
+    "DirectedCompatibilityEvaluation": {
+      "title": "DirectedCompatibilityEvaluation",
+      "description": "A directional evaluation from person to candidate",
+      "type": "object",
+      "properties": {
+        "personId": { "type": "string" },
+        "candidateId": { "type": "string" },
+        "compatibilityScore": { "type": "number" },
+        "chemistrySummary": { "type": "string" },
+        "datingSessionId": { "type": "string" }
+      },
+      "required": ["personId", "candidateId", "compatibilityScore", "chemistrySummary", "datingSessionId"]
+    },
+    "CandidateMatch": {
+      "title": "CandidateMatch",
+      "description": "A calculated deterministic candidate match pairing",
+      "type": "object",
+      "properties": {
+        "personId": { "type": "string" },
+        "candidateId": { "type": "string" },
+        "candidateScore": { "type": "number" },
+        "eligibilityStatus": { "type": "string" }
+      },
+      "required": ["personId", "candidateId", "candidateScore", "eligibilityStatus"]
+    }
+  },
+  "firestore": {
+    "/people/{personId}": {
+      "schema": "Person",
+      "description": "Collection of people with profile intelligence"
+    },
+    "/datingSessions/{sessionId}": {
+      "schema": "DateSession",
+      "description": "Completed agent dating conversations and results"
+    },
+    "/directedEvaluations/{evalId}": {
+      "schema": "DirectedCompatibilityEvaluation",
+      "description": "Directional compatibility evaluations and quotes"
+    },
+    "/candidateMatches/{matchId}": {
+      "schema": "CandidateMatch",
+      "description": "Deterministic calculated top candidate match records"
+    }
+  }
+}
